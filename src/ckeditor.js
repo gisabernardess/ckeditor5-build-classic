@@ -4,31 +4,62 @@
  */
 
 // The editor creator to use.
-import ClassicEditorBase from '@ckeditor/ckeditor5-editor-classic/src/classiceditor';
+import ClassicEditorBase from "@ckeditor/ckeditor5-editor-classic/src/classiceditor";
 
-import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials';
-import UploadAdapter from '@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter';
-import Autoformat from '@ckeditor/ckeditor5-autoformat/src/autoformat';
-import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold';
-import Italic from '@ckeditor/ckeditor5-basic-styles/src/italic';
-import BlockQuote from '@ckeditor/ckeditor5-block-quote/src/blockquote';
-import CKFinder from '@ckeditor/ckeditor5-ckfinder/src/ckfinder';
-import EasyImage from '@ckeditor/ckeditor5-easy-image/src/easyimage';
-import Heading from '@ckeditor/ckeditor5-heading/src/heading';
-import Image from '@ckeditor/ckeditor5-image/src/image';
-import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption';
-import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle';
-import ImageToolbar from '@ckeditor/ckeditor5-image/src/imagetoolbar';
-import ImageUpload from '@ckeditor/ckeditor5-image/src/imageupload';
-import Indent from '@ckeditor/ckeditor5-indent/src/indent';
-import Link from '@ckeditor/ckeditor5-link/src/link';
-import List from '@ckeditor/ckeditor5-list/src/list';
-import MediaEmbed from '@ckeditor/ckeditor5-media-embed/src/mediaembed';
-import Paragraph from '@ckeditor/ckeditor5-paragraph/src/paragraph';
-import PasteFromOffice from '@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice';
-import Table from '@ckeditor/ckeditor5-table/src/table';
-import TableToolbar from '@ckeditor/ckeditor5-table/src/tabletoolbar';
-import TextTransformation from '@ckeditor/ckeditor5-typing/src/texttransformation';
+import Essentials from "@ckeditor/ckeditor5-essentials/src/essentials";
+import UploadAdapter from "@ckeditor/ckeditor5-adapter-ckfinder/src/uploadadapter";
+import Autoformat from "@ckeditor/ckeditor5-autoformat/src/autoformat";
+import Bold from "@ckeditor/ckeditor5-basic-styles/src/bold";
+import Italic from "@ckeditor/ckeditor5-basic-styles/src/italic";
+import BlockQuote from "@ckeditor/ckeditor5-block-quote/src/blockquote";
+import CKFinder from "@ckeditor/ckeditor5-ckfinder/src/ckfinder";
+import EasyImage from "@ckeditor/ckeditor5-easy-image/src/easyimage";
+import Heading from "@ckeditor/ckeditor5-heading/src/heading";
+import Image from "@ckeditor/ckeditor5-image/src/image";
+import ImageCaption from "@ckeditor/ckeditor5-image/src/imagecaption";
+import ImageStyle from "@ckeditor/ckeditor5-image/src/imagestyle";
+import ImageToolbar from "@ckeditor/ckeditor5-image/src/imagetoolbar";
+import ImageUpload from "@ckeditor/ckeditor5-image/src/imageupload";
+import Indent from "@ckeditor/ckeditor5-indent/src/indent";
+import Link from "@ckeditor/ckeditor5-link/src/link";
+import List from "@ckeditor/ckeditor5-list/src/list";
+import MediaEmbed from "@ckeditor/ckeditor5-media-embed/src/mediaembed";
+import Paragraph from "@ckeditor/ckeditor5-paragraph/src/paragraph";
+import PasteFromOffice from "@ckeditor/ckeditor5-paste-from-office/src/pastefromoffice";
+import Table from "@ckeditor/ckeditor5-table/src/table";
+import TableToolbar from "@ckeditor/ckeditor5-table/src/tabletoolbar";
+import TextTransformation from "@ckeditor/ckeditor5-typing/src/texttransformation";
+
+import Underline from "@ckeditor/ckeditor5-basic-styles/src/underline.js";
+import Strikethrough from "@ckeditor/ckeditor5-basic-styles/src/strikethrough.js";
+import Alignment from "@ckeditor/ckeditor5-alignment/src/alignment.js";
+import WordCount from "@ckeditor/ckeditor5-word-count/src/wordcount.js";
+import FontFamily from "@ckeditor/ckeditor5-font/src/fontfamily.js";
+import FontSize from "@ckeditor/ckeditor5-font/src/fontsize.js";
+import FontColor from "@ckeditor/ckeditor5-font/src/fontcolor.js";
+import FontBackgroundColor from "@ckeditor/ckeditor5-font/src/fontbackgroundcolor.js";
+import Superscript from "@ckeditor/ckeditor5-basic-styles/src/superscript.js";
+import Subscript from "@ckeditor/ckeditor5-basic-styles/src/subscript.js";
+import HorizontalLine from "@ckeditor/ckeditor5-horizontal-line/src/horizontalline.js";
+import Highlight from "@ckeditor/ckeditor5-highlight/src/highlight.js";
+import TableProperties from "@ckeditor/ckeditor5-table/src/tableproperties";
+import RemoveFormat from "@ckeditor/ckeditor5-remove-format/src/removeformat.js";
+import TodoList from "@ckeditor/ckeditor5-list/src/todolist";
+import TableCellProperties from "@ckeditor/ckeditor5-table/src/tablecellproperties";
+import ImageResize from "@ckeditor/ckeditor5-image/src/imageresize.js";
+import MediaEmbedToolbar from "@ckeditor/ckeditor5-media-embed/src/mediaembedtoolbar.js";
+import IndentBlock from "@ckeditor/ckeditor5-indent/src/indentblock.js";
+import Code from "@ckeditor/ckeditor5-basic-styles/src/code.js";
+import CodeBlock from "@ckeditor/ckeditor5-code-block/src/codeblock.js";
+import Mention from "@ckeditor/ckeditor5-mention/src/mention.js";
+
+import SpecialCharacters from "@ckeditor/ckeditor5-special-characters/src/specialcharacters.js";
+import SpecialCharactersMathematical from "@ckeditor/ckeditor5-special-characters/src/specialcharactersmathematical.js";
+import SpecialCharactersText from "@ckeditor/ckeditor5-special-characters/src/specialcharacterstext.js";
+import SpecialCharactersCurrency from "@ckeditor/ckeditor5-special-characters/src/specialcharacterscurrency.js";
+import SpecialCharactersArrows from "@ckeditor/ckeditor5-special-characters/src/specialcharactersarrows.js";
+import SpecialCharactersEssentials from "@ckeditor/ckeditor5-special-characters/src/specialcharactersessentials.js";
+import SpecialCharactersLatin from "@ckeditor/ckeditor5-special-characters/src/specialcharacterslatin.js";
 
 export default class ClassicEditor extends ClassicEditorBase {}
 
@@ -56,47 +87,55 @@ ClassicEditor.builtinPlugins = [
 	PasteFromOffice,
 	Table,
 	TableToolbar,
-	TextTransformation
+	TextTransformation,
+	Alignment,
+	WordCount,
+	Underline,
+	Strikethrough,
+	FontFamily,
+	FontSize,
+	FontColor,
+	FontBackgroundColor,
+	Superscript,
+	Subscript,
+	HorizontalLine,
+	Highlight,
+	TableProperties,
+	RemoveFormat,
+	TodoList,
+	TableCellProperties,
+	ImageResize,
+	MediaEmbedToolbar,
+	IndentBlock,
+	Code,
+	CodeBlock,
+	Mention,
+	SpecialCharacters,
+	SpecialCharactersMathematical,
+	SpecialCharactersText,
+	SpecialCharactersCurrency,
+	SpecialCharactersArrows,
+	SpecialCharactersEssentials,
+	SpecialCharactersLatin
 ];
 
 // Editor configuration.
 ClassicEditor.defaultConfig = {
 	toolbar: {
 		items: [
-			'heading',
-			'|',
-			'bold',
-			'italic',
-			'link',
-			'bulletedList',
-			'numberedList',
-			'|',
-			'indent',
-			'outdent',
-			'|',
-			'imageUpload',
-			'blockQuote',
-			'insertTable',
-			'mediaEmbed',
-			'undo',
-			'redo'
-		]
-	},
-	image: {
-		toolbar: [
-			'imageStyle:full',
-			'imageStyle:side',
-			'|',
-			'imageTextAlternative'
-		]
-	},
-	table: {
-		contentToolbar: [
-			'tableColumn',
-			'tableRow',
-			'mergeTableCells'
+			"bold",
+			"italic",
+			"underline",
+			"strikethrough",
+			"blockQuote",
+			"|",
+			"alignment:right",
+			"alignment:justify",
+			"alignment:left",
+			"alignment:center",
+			"removeFormat"
 		]
 	},
 	// This value must be kept in sync with the language defined in webpack.config.js.
-	language: 'en'
+	language: "pt-br"
 };
